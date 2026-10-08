@@ -1,0 +1,8 @@
+{
+  "name": "Vault Guide",
+  "short_name": "Vault Guide",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#111827"
+}
