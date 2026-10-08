@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vault Guide</title>
+<style>
+body{font-family:Arial;background:#111;color:white;padding:15px}
+.card{background:#222;padding:15px;margin:10px 0;border-radius:10px}
+input{font-size:20px;padding:8px;width:100%}
+</style>
+</head>
+<body>
+<h1>VAULT GUIDE</h1>
+<p>Borderlands 2 — Easy Road Bosses</p>
+
+<label>Your level:</label>
+<input id="level" type="number" value="6" min="1">
+
+<div id="bosses"></div>
+
+<script>
+const bosses=[
+["Knuckle Dragger",1,"Southern Shelf"],
+["Boom & Bewm",5,"Southern Shelf"],
+["Captain Flynt",6,"Liar's Berg"],
+["Bad Maw",12,"Bloodshot Stronghold"],
+["Wilhelm",14,"End of the Line"],
+["BNK3R",25,"The Bunker"],
+["The Warrior",30,"Hero's Pass"]
+];
+
+function show(){
+let l=+document.getElementById("level").value||1;
+document.getElementById("bosses").innerHTML=bosses
+.sort((a,b)=>Math.abs(a[1]-l)-Math.abs(b[1]-l))
+.map(b=>`<div class="card"><h2>${b[0]}</h2>
+Level ${b[1]}<br>Location: ${b[2]}</div>`).join("");
+}
+document.getElementById("level").oninput=show;
+show();
+</script>
+</body>
+  </html>
