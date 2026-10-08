@@ -1,43 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vault Guide</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111827">
+<link rel="manifest" href="manifest.json">
+<title>VaultGuide Pro</title>
 <style>
-body{font-family:Arial;background:#111;color:white;padding:15px}
-.card{background:#222;padding:15px;margin:10px 0;border-radius:10px}
-input{font-size:20px;padding:8px;width:100%}
+body{margin:0;background:#0b1020;color:#fff;font-family:Arial,sans-serif}
+header{background:#172235;padding:18px;position:sticky;top:0}
+h1{margin:0;color:#f5b942}
+nav{display:flex;overflow:auto;gap:6px;background:#111827;padding:10px}
+button,select,input{padding:10px;border-radius:8px;background:#24324a;color:white;border:1px solid #526078}
+main{padding:12px;max-width:800px;margin:auto}
+.card{background:#172235;border:1px solid #334155;border-radius:12px;padding:14px;margin:10px 0}
+button{cursor:pointer} .muted{color:#b9c3d3}
 </style>
 </head>
 <body>
-<h1>VAULT GUIDE</h1>
-<p>Borderlands 2 — Easy Road Bosses</p>
-
-<label>Your level:</label>
-<input id="level" type="number" value="6" min="1">
-
-<div id="bosses"></div>
-
+<header>
+<h1>⚡ VaultGuide Pro</h1>
+<p class="muted">Your Borderlands companion</p>
+</header>
+<nav id="nav"></nav>
+<main id="app"></main>
 <script>
-const bosses=[
-["Knuckle Dragger",1,"Southern Shelf"],
-["Boom & Bewm",5,"Southern Shelf"],
-["Captain Flynt",6,"Liar's Berg"],
-["Bad Maw",12,"Bloodshot Stronghold"],
-["Wilhelm",14,"End of the Line"],
-["BNK3R",25,"The Bunker"],
-["The Warrior",30,"Hero's Pass"]
-];
-
-function show(){
-let l=+document.getElementById("level").value||1;
-document.getElementById("bosses").innerHTML=bosses
-.sort((a,b)=>Math.abs(a[1]-l)-Math.abs(b[1]-l))
-.map(b=>`<div class="card"><h2>${b[0]}</h2>
-Level ${b[1]}<br>Location: ${b[2]}</div>`).join("");
-}
-document.getElementById("level").oninput=show;
-show();
-</script>
-</body>
-  </html>
+const games={
+"Borderlands 1":["Nine-Toes","Sledge","Krom","The Destroyer"],
+"Borderlands 2":["Knuckle Dragger","Boom & Bewm","Captain Flynt","Wilhelm","BNK3R","The Warrior"],
+"The Pre-Sequel":["RedBelly","RK5","The Sentinel"],
+"Borderlands 3":["Shiv","Mouthpiece","Gigamind","Graveward","Tyreen"],
+"Borderlands 4":["
